@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org"
+<html xmlns:th="http://thymeleaf.org">
 
 <head>
   <meta charset="utf-8">
@@ -21,7 +21,7 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet"> //
+  <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -65,11 +65,11 @@
       <div class="container">
         <div th:each="matricula : ${matriculas}">
         <div class="row">
-        <p><span th:text="$matricula.nome"></span><p>
-        <p><span th:text="$matricula.cidade"></span><p>
-        <p><span th:text="$matricula.genero"></span><p>
-        <p><span th:text="$matricula.ensino"></span><p>
-        <p><span th:text="$matricula.telefone"></span><p>
+        <p><span th:text="${matricula.nome}"></span><p>
+        <p><span th:text="${matricula.cidade}"></span><p>
+        <p><span th:text="${matricula.genero}"></span><p>
+        <p><span th:text="${matricula.ensino}"></span><p>
+        <p><span th:text="${matricula.telefone}"></span><p>
         
         </div>
         
