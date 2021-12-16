@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html xmlns:th="http://thymeleaf.org"
 
 <head>
   <meta charset="utf-8">
@@ -21,7 +21,7 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet"> //
 
 </head>
 
@@ -36,7 +36,7 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#inicio">Início</a></li>
           <li><a class="nav-link scrollto" href="matriculas">Matrículas</a></li>
-          <li><a class="scrollto" href="#boletim">Boletim Escolar</a></li>
+          <li><a class="scrollto" href="matricularAluno">Boletim Escolar</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -51,7 +51,7 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Matrícula Online</h2>
+          <h2>Matrículas realizadas</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
             <li>Matrícula</li>
@@ -63,31 +63,17 @@
 
     <section class="inner-page">
       <div class="container">
-        <form method="post" class="row g-3">
-          <div class="col-md-6">
-            <label for="inputnome" class="form-label">Nome Completo</label>
-            <input type="text" class="form-control" id="nome" name="nome">
-          </div>
-          <div class="col-md-6">
-            <label for="inputcidade" class="form-label">Cidade onde mora</label>
-            <input type="text" class="form-control" id="cidade" name="cidade">
-          </div>
-          <div class="col-12">
-            <label for="inputgenero" class="form-label">Gênero que se identifica</label>
-            <input type="text" class="form-control" id="genero" placeholder="Seu gênero" name="genero">
-          </div>
-          <div class="col-md-2">
-            <label for="inputensino" class="form-label">Ensino que deseja</label>
-            <input type="text" class="form-control" id="ensino" value="" name="ensino">
-          </div>
-          <div class="col-md-2">
-            <label for="inputtelefone" class="form-label">Telefone para contato</label>
-            <input type="text" class="form-control" id="telefone" value="" name="telefone">
-          </div>
-          <div class="col-12">
-            <button type="submit" class="btn btn-primary">Matricular</button>
-          </div>
-        </form>
+        <div th:each="matricula : ${matriculas}">
+        <div class="row">
+        <p><span th:text="$matricula.nome"></span><p>
+        <p><span th:text="$matricula.cidade"></span><p>
+        <p><span th:text="$matricula.genero"></span><p>
+        <p><span th:text="$matricula.ensino"></span><p>
+        <p><span th:text="$matricula.telefone"></span><p>
+        
+        </div>
+        
+        </div>
       </div>
     </section>
 
