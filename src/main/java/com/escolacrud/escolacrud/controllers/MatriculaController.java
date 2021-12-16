@@ -24,7 +24,7 @@ public class MatriculaController {
 	public String form(Matricula matricula) {
 		
 		er.save(matricula);
-		return "matriculas";
+		return "formulario";
 	}
 	
 	@RequestMapping("matriculas")
