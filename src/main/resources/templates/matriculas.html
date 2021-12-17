@@ -71,6 +71,7 @@
               <th scope="col">Gênero</th>
               <th scope="col">Ensino</th>
               <th scope="col">Telefone</th>
+              <th scope="col">Deletar</th>
             </tr>
           </thead>
           <tbody>
@@ -80,6 +81,7 @@
               <td th:text="${matricula.genero}"></td>
               <td th:text="${matricula.ensino}"></td>
               <td th:text="${matricula.telefone}"></td>
+              <td><a class="btn btn-danger" th:href="@{/deletarMatricula{codigo}(codigo = ${matricula.codigo}) }"><i class="bi bi-trash"></i></a></td>
             </tr>
           </tbody>
         </table>
